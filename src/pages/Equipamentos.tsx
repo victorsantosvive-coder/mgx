@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Equipment, criticalityColors, criticalityLabels } from "@/types/equipment";
-import { Edit, Trash2, Move, Maximize2, Minimize2 } from "lucide-react";
+import { CreditCard as Edit, Trash2, Move, Maximize2, Minimize2 } from "lucide-react";
 
 interface DraggableEquipmentCardProps {
   equipment: Equipment;
