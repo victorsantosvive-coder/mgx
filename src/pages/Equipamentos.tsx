@@ -38,7 +38,7 @@ export function DraggableEquipmentCard({
   });
 
   const style = transform ? {
-    transform: translate3d(${transform.x}px, ${transform.y}px, 0),
+    transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
   } : undefined;
 
   const handleResize = (direction: 'increase' | 'decrease') => {
@@ -134,13 +134,14 @@ export function DraggableEquipmentCard({
             </Badge>
             {criticality !== 'none' && (
               <Badge 
-                className={`text-xs ${
-                  criticality === 'critical' ? 'bg-critical text-critical-foreground' :
-                  criticality === 'high' ? 'bg-high text-high-foreground' :
-                  criticality === 'medium' ? 'bg-medium text-medium-foreground' :
-                  criticality === 'low' ? 'bg-low text-low-foreground' :
-                  'bg-muted text-muted-foreground'
-                }`}
+                variant={
+                  criticality === 'critical' ? 'destructive' :
+                  criticality === 'high' ? 'destructive' :
+                  criticality === 'medium' ? 'secondary' :
+                  criticality === 'low' ? 'outline' :
+                  'outline'
+                }
+                className="text-xs"
               >
                 {criticalityLabels[criticality]}
               </Badge>
